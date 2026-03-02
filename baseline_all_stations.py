@@ -55,13 +55,13 @@ print(f"\n找到 {len(csv_files)} 个 CSV 文件:")
 for f in csv_files:
     print(f"  - {os.path.basename(f)}")
 if not csv_files:
-    print("❌ data/ 下没有 CSV，请先上传数据到 data/ 目录")
+    print("data/ 下没有 CSV，请先上传数据到 data/ 目录")
     sys.exit(1)
 
 if not os.path.exists(data_dir) or not os.path.isdir(data_dir):
-    print("❌ data 目录不存在")
+    print("data 目录不存在")
     sys.exit(1)
-print(f"✅ data 目录存在: {data_dir}，将运行 {len(csv_files)} 个 CSV")
+print(f"data 目录存在: {data_dir}，将运行 {len(csv_files)} 个 CSV")
 
 # ---------------------------------------------------------------------------
 # Step 2: Config
@@ -144,7 +144,7 @@ for i, data_path in enumerate(csv_files):
     })
     print(f"  完成: MAE Linear={linear_metrics['mae']:.4f}, XGB={xgb_metrics['mae']:.4f} ({time.time()-t0:.1f}s)")
 
-print(f"\n✅ 共完成 {len(all_results)} 个站点")
+print(f"\n 共完成 {len(all_results)} 个站点")
 
 if not all_results:
     print("没有成功完成的站点，退出")
@@ -273,3 +273,4 @@ if all_results:
     plt.show()
 
 print("\n🎉 实验完成")
+
